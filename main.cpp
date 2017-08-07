@@ -674,14 +674,6 @@ public:
     }
 };
 
-//  Object ranking performance (default setting)
-//  DistMult:  MRR  =  67.99,  Hits@10  =  88.48
-//  Complex:   MRR  =  69.26,  Hits@10  =  87.11
-//  BlockDiag: MRR  =  71.72,  Hits@10  =  88.67
-//
-//  TODO: identify the speed bottleneck
-//  TODO: model-specific configurations
-//  TODO: XXX: using more than one dimension to represent each semantic meaning!
 
 int main(int argc, char **argv) {
     // option parser
