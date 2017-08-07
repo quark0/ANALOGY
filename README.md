@@ -1,4 +1,19 @@
 # ANALOGY
-C++ implementation of "Analogical Inference for Multi-Relational Embeddings"
+The repository contains C++ implementation of the following paper
 
-Code coming soon!
+[Analogical Inference for Multi-Relational Embeddings](https://arxiv.org/abs/1705.02426).
+
+Hanxiao Liu, Yuexin Wu, Yiming Yang.
+
+International Conference on Machine Learning, ICML 2017.
+
+
+## Basic Usage
+For training
+```
+make && ./main -model_path analogy.model
+```
+For prediction
+```
+./main -prediction 1 -model_path analogy.model
+```
