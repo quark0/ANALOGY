@@ -16,7 +16,7 @@ Prediction
 ```
 ./main -algorithm Analogy -model_path output.model -prediction 1
 ```
-The program runs with 32 threads by default. For more options pealse refer to `main.cc`.
+The program runs with 32 threads by default. For more options, please refer to `main.cc`.
 ## Contributors
 Please cite the following if you use the code for publication
 ```
