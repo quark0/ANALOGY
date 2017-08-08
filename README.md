@@ -1,12 +1,11 @@
 # ANALOGY
-The repository contains C++ implementation of the following paper
+The repository contains C++ implementation for the following papers
 
-[Analogical Inference for Multi-Relational Embeddings](https://arxiv.org/abs/1705.02426).
+[Analogical Inference for Multi-Relational Embeddings](https://arxiv.org/abs/1705.02426). Hanxiao Liu, Yuexin Wu and Yiming Yang. ICML 2017.
 
-Hanxiao Liu, Yuexin Wu, Yiming Yang.
+[Complex Embeddings for Simple Link Prediction](http://proceedings.mlr.press/v48/trouillon16.pdf). Théo Trouillon, Johannes Welbl, Sebastian Riedel, Éric Gaussier and Guillaume Bouchard. ICML 2016.
 
-International Conference on Machine Learning, ICML 2017.
-
+[Embedding Entities and Relations for Learning and Inference in Knowledge Bases](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ICLR2015_updated.pdf). Bishan Yang, Wen-tau Yih, Xiaodong He, Jianfeng Gao and Li Deng. ICLR 2015.
 
 ## Basic Usage
 For training
