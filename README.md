@@ -1,5 +1,5 @@
 # ANALOGY
-The repository contains C++ implementation for the following papers
+The repository provides lightweight C++ implementations for the following papers
 
 * [Analogical Inference for Multi-Relational Embeddings](https://arxiv.org/abs/1705.02426). Hanxiao Liu, Yuexin Wu and Yiming Yang. ICML 2017.
 
