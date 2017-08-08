@@ -467,6 +467,7 @@ int ArgPos(char *str, int argc, char **argv) {
     return -1;
 }
 
+
 class DistMult : public Model {
     int nh;
 
@@ -502,6 +503,7 @@ public:
         }
     }
 };
+
 
 class Complex : public Model {
     int nh;
@@ -551,6 +553,7 @@ public:
         }
     }
 };
+
 
 class Analogy : public Model {
     int nh1;
@@ -613,64 +616,6 @@ public:
             d_o[nh2_2+i] = R[r][i] * E[s][nh2_2+i] + R[r][nh2_2+i] * E[s][i];
         }
 
-    }
-};
-
-class BlockDiag : public Model {
-    int m;  // block size
-    int n;  // num blocks
-
-public:
-    BlockDiag(int ne, int nr, int nh, double eta, double gamma) : Model(eta, gamma) {
-        m = 2;
-        assert(nh % m == 0);
-        n = nh / m;
-
-        E = uniform_matrix(ne, nh, -init_b, init_b);
-        R = uniform_matrix(nr, n * m * m, -init_b, init_b);
-        E_g = const_matrix(ne, nh, init_e);
-        R_g = const_matrix(nr, n * m * m, init_e);
-    }
-
-    double score(int s, int r, int o) const {
-        double dot = 0;
-
-        int tt = 0;
-        for (int k = 0; k < n; k++) {
-            for (int i = 0; i < m; i++) {
-                for (int j = 0; j < m; j++) {
-                    dot += E[s][k*m + i] * R[r][tt] * E[o][k*m + j];
-                    tt++;
-                }
-            }
-        }
-        return dot;
-    }
-
-    void score_grad(
-        int s,
-        int r,
-        int o,
-        vector<double>& d_s, 
-        vector<double>& d_r, 
-        vector<double>& d_o) {
-
-        fill(d_s.begin(), d_s.end(), 0.);
-        fill(d_o.begin(), d_o.end(), 0.);
-
-        int ii, jj, tt = 0;
-        for (int k = 0; k < n; k++) {
-            for (int i = 0; i < m; i++) {
-                for (int j = 0; j < m; j++) {
-                    ii = k*m + i;
-                    jj = k*m + j;
-                    d_s[ii] += R[r][tt] * E[o][jj];
-                    d_o[jj] += E[s][ii] * R[r][tt];
-                    d_r[tt] += E[s][ii] * E[o][jj];
-                    tt++;
-                }
-            }
-        }
     }
 };
 
@@ -739,7 +684,6 @@ int main(int argc, char **argv) {
     Model *model = NULL;
     if (algorithm == "DistMult")  model = new DistMult(ne, nr, embed_dim, eta, gamma);
     if (algorithm == "Complex")   model = new Complex(ne, nr, embed_dim, eta, gamma);
-    if (algorithm == "BlockDiag") model = new BlockDiag(ne, nr, embed_dim, eta, gamma);
     if (algorithm == "Analogy")   model = new Analogy(ne, nr, embed_dim, num_scalar, eta, gamma);
     assert(model != NULL);
 
