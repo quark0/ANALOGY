@@ -1,18 +1,28 @@
 # ANALOGY
 The repository contains C++ implementation for the following papers
 
-[Analogical Inference for Multi-Relational Embeddings](https://arxiv.org/abs/1705.02426). Hanxiao Liu, Yuexin Wu and Yiming Yang. ICML 2017.
+* [Analogical Inference for Multi-Relational Embeddings](https://arxiv.org/abs/1705.02426). Hanxiao Liu, Yuexin Wu and Yiming Yang. ICML 2017.
 
-[Complex Embeddings for Simple Link Prediction](http://proceedings.mlr.press/v48/trouillon16.pdf). Théo Trouillon, Johannes Welbl, Sebastian Riedel, Éric Gaussier and Guillaume Bouchard. ICML 2016.
+* [Complex Embeddings for Simple Link Prediction](http://proceedings.mlr.press/v48/trouillon16.pdf). Théo Trouillon, Johannes Welbl, Sebastian Riedel, Éric Gaussier and Guillaume Bouchard. ICML 2016.
 
-[Embedding Entities and Relations for Learning and Inference in Knowledge Bases](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ICLR2015_updated.pdf). Bishan Yang, Wen-tau Yih, Xiaodong He, Jianfeng Gao and Li Deng. ICLR 2015.
+* [Embedding Entities and Relations for Learning and Inference in Knowledge Bases](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ICLR2015_updated.pdf). Bishan Yang, Wen-tau Yih, Xiaodong He, Jianfeng Gao and Li Deng. ICLR 2015.
 
 ## Basic Usage
 For training
 ```
-make && ./main -model_path analogy.model
+make && ./main -algorithm Analogy -model_path output.model
 ```
 For prediction
 ```
-./main -prediction 1 -model_path analogy.model
+./main -algorithm Analogy -model_path output.model -prediction 1
+```
+## Contributors
+Please cite the following if you use the code for publication
+```
+@article{liu2017analogical,
+  title={Analogical Inference for Multi-Relational Embeddings},
+  author={Liu, Hanxiao and Wu, Yuexin and Yang, Yiming},
+  journal={arXiv preprint arXiv:1705.02426},
+  year={2017}
+}
 ```
