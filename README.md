@@ -8,14 +8,15 @@ The repository contains C++ implementation for the following papers
 * [Embedding Entities and Relations for Learning and Inference in Knowledge Bases](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ICLR2015_updated.pdf). Bishan Yang, Wen-tau Yih, Xiaodong He, Jianfeng Gao and Li Deng. ICLR 2015.
 
 ## Basic Usage
-For training
+Training
 ```
 make && ./main -algorithm Analogy -model_path output.model
 ```
-For prediction
+Prediction
 ```
 ./main -algorithm Analogy -model_path output.model -prediction 1
 ```
+The program runs with 32 threads by default. For more options pealse refer to `main.cc`.
 ## Contributors
 Please cite the following if you use the code for publication
 ```
